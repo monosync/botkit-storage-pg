@@ -1,35 +1,32 @@
 {
-  "name": "@machinshin/botkit-storage-postgres",
-  "version": "0.2.1",
-  "description": "Postgres storage driver for botkit",
-  "main": "src/index.js",
+  "name": "@monosync/botkit-storage-pg",
+  "version": "0.0.1",
+  "description": "Botkit PostgreSQL storage driver",
+  "main": "src/index.coffee",
   "scripts": {
-    "test": "node ./tests/index.js"
+    "test": "coffee ./test/index.coffee"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/machinshin/botkit-storage-postgres.git"
+    "url": "git+https://github.com/monosync/botkit-storage-pg.git"
   },
   "keywords": [
     "botkit",
     "postgres",
+    "pg",
     "botkit-storage"
   ],
-  "author": "Emil Ingerslev <emil@ingerslev.io> (http://ingerslev.io)",
-  "license": "Apache-2.0",
+  "author": "Victor Sych <victor.sych@gmail.com>",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/machinshin/botkit-storage-postgres/issues"
+    "url": "https://github.com/monosync/botkit-storage-pg/issues"
   },
-  "homepage": "https://github.com/machinshin/botkit-storage-postgres#readme",
+  "homepage": "https://github.com/monosync/botkit-storage-pg#readme",
   "dependencies": {
-    "co": "^4.6.0",
-    "pg": "^6.1.0"
+    "coffeescript": "^2.4.1",
+    "pg": "^7.14.0"
   },
   "engines": {
-    "node": ">=6.7"
-  },
-  "devDependencies": {
-    "async": "^2.1.2",
-    "unit.js": "^2.0.0"
+    "node": ">=8.16"
   }
 }
