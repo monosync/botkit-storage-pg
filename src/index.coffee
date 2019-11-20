@@ -11,19 +11,19 @@ module.exports = ({url}) =>
 
     get: (id, cb) ->
       rows = await query "SELECT json FROM #{table} WHERE id = $1", [id]
-      cb rows[0].json
+      cb null, rows[0]?.json
 
     save: (data, cb) ->
       await query "INSERT INTO #{table} (id, json) VALUES ($1, $2) ON CONFLICT (id) DO UPDATE SET json = EXCLUDED.json", [data.id, data]
-      cb()
+      cb null
 
     delete: (id, cb) ->
       await query "DELETE FROM #{table} WHERE id = $1", [id]
-      cb()
+      cb null
 
     all: (cb) ->
       rows = await query "SELECT json FROM #{table}"
-      cb rows.map (r) -> r.json
+      cb null, rows?.map (r) -> r.json
 
   teams:      persisting 'botkit_teams'
   channels:   persisting 'botkit_channels'
